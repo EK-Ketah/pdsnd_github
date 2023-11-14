@@ -18,3 +18,6 @@ python bikeshare.py
 
 ### Credits
 https://github.com/udacity/pdsnd_github/blob/06513a5926d1e1f8cd62048daf0baff8541dc276/README.md#L4
+
+### Analyzing Data by Day of the Week
+The `bikeshare.py` script now allows users to analyze bikeshare data by filtering based on the day of the week. When prompted, enter the desired day to view statistics specific to that day.
