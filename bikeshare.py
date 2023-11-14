@@ -35,6 +35,17 @@ def get_filters():
     return city, month, day
 
 def load_data(city, month, day):
+ """
+    Load bikeshare data for the specified city, month, and day.
+
+    Args:
+        city (str): Name of the city (e.g., 'chicago', 'new york city', 'washington')
+        month (str): Name of the month (e.g., 'all', 'january', 'february')
+        day (str): Name of the day (e.g., 'all', 'monday', 'tuesday')
+
+    Returns:
+        df (pd.DataFrame): Pandas DataFrame containing bikeshare data
+    """
     filename = CITY_DATA[city]
     df = pd.read_csv(filename)
 
