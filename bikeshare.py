@@ -53,15 +53,12 @@ def load_data(city, month, day):
     df['Month'] = df['Start Time'].dt.month
     df['Day_of_Week'] = df['Start Time'].dt.day_name()
 
-    if month != 'all':
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month_num = months.index(month) + 1
-        df = df[df['Month'] == month_num]
+    month_mapping = {'all': 0, 'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6}
+    month_num = month_mapping.get(month, 0)
+    df = df[df['Month'] == month_num]
 
     if day != 'all':
         df = df[df['Day_of_Week'] == day.title()]
-
-    return df
 
 def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
